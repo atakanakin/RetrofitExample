@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     var quotex: String? = "No quote, Check your connection!"
     var authorx: String? = "-Atakan"
+    var count : Int? = 0
+    var rand : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -26,21 +28,23 @@ class MainActivity : AppCompatActivity() {
             val result = quotesApi.getQuotes()
             if (result != null){
                 result.body().toString()
-                quotex = (result.body()?.results)?.get(0)?.content
-                authorx = (result.body()?.results)?.get(0)?.author
-                println(quotex)
-                println(authorx)
-                println("here")
+                count = result.body()?.count
+                rand = (0..(count?.minus(1))!!).random()
+                quotex = (result.body()?.results)?.get(rand)?.content
+                authorx = (result.body()?.results)?.get(rand)?.author
 
             }
             // Checking the results
-            binding.quote.setText(quotex)
+            binding.quote.text = quotex
             binding.author.text = authorx
+            binding.buttonRand.setOnClickListener(){
+                rand = (0..(count?.minus(1))!!).random()
+                quotex = (result.body()?.results)?.get(rand)?.content
+                authorx = (result.body()?.results)?.get(rand)?.author
+                binding.quote.text = quotex
+                binding.author.text = authorx
+            }
         }
-
-
-
-
 
         setContentView(binding.root)
     }
