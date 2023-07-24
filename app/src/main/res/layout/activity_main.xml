@@ -33,14 +33,35 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonRand"
-        android:layout_width="126dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="142dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginBottom="178dp"
-        android:text="Random Quote"
+        android:id="@+id/prevbtn"
+        android:layout_width="129dp"
+        android:textSize="20dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="182dp"
+        android:text="Previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextbtn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/nextbtn"
+        android:textSize="20dp"
+        android:layout_width="129dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="182dp"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/prevbtn" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
