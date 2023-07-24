@@ -7,12 +7,28 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/quote"
+        android:layout_width="359dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="57dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/author"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="153dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="236dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="358dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
